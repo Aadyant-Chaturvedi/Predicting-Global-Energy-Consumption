@@ -22,12 +22,12 @@ ML model that predicts global energy consumption using libraries- i)Numpy ii)Pan
 ## Project structure
 
 ```
-[Predicting-Global-Energy-Consumption]/
-├── [Dataset]/
-│   └── [dataset_Description.md]
-│   └── [global_energy_consumption.csv]
-├── [Source]/
-│   ├── [main.py]
+Predicting-Global-Energy-Consumption/
+├── Dataset/
+│   └── dataset_Description.md
+│   └── global_energy_consumption.csv
+├── Source/
+│   ├── main.py
 ├── requirements.txt
 └── README.md
 ```
@@ -39,14 +39,14 @@ ML model that predicts global energy consumption using libraries- i)Numpy ii)Pan
 | Item | Details |
 |------|---------|
 | Source | [https://www.kaggle.com/datasets/atharvasoundankar/global-energy-consumption-2000-2024] |
-| Licence / terms of use | [Licence] |
-| Rows × columns | [Number] |
-| Time period covered | [Period] |
-| Geographic coverage | [Countries or regions] |
-| Consumption measured | [What is being consumed, in what units] |
-| Target variable | [Column name and meaning] |
-| Features used | [List of columns] |
-| Preprocessing | [Missing values, scaling, encoding, train/test split, etc.] |
+| Licence / terms of use | CC0: Public Domain |
+| Rows × columns | 10001x10 |
+| Time period covered | 2000-2024 |
+| Geographic coverage | Australia, Brazil, China, Canada, Germany, India, Japan, Russia, UK, USA |
+| Consumption measured | Global Energy Consumption in TWh |
+| Target variable | Global Energy Consumption in TWh |
+| Features used | Year, Per Capita Energy Use(kWh), Renewable Energy Share(%), Fossil Fuel Dependency(%), Industrial Energy Use(%), Household Energy Use(%), Carbon Emissions Index (Million Tons), Energy Price Index (USD/kWh) |
+| Preprocessing | Clean Dataset, Train-Test Split performed (random_state=42, test_size=0.2), Since its a linear regression model --> no scaling is required|
 
 ---
 
@@ -54,37 +54,35 @@ ML model that predicts global energy consumption using libraries- i)Numpy ii)Pan
 
 | Item | Details |
 |------|---------|
-| Problem type | [Regression / other] |
-| Model(s) | [Model names and key settings] |
-| Train / test split | [Ratio, random seed, or time-based split] |
-| Evaluation metric(s) | [Metric names] |
-| Results | [Metric values on the test set] |
+| Problem type | Regression |
+| Model(s) | Linear Regression |
+| Train / test split | test_size=0.2,random_state=42 |
+| Evaluation metric(s) | MAE,RMSE,Precision,Recall,Accuracy,F1 score |
+| Results | (To be updated) |
 
 ---
 
 ## Setup
 
-Tested on Python [version(s)] ([operating systems tested]).
+Tested on Python 3.15.0 (Windows 11,10).
 
 ```bash
-git clone [repository URL]
-cd [repo-name]
+git clone https://github.com/Aadyant-Chaturvedi/Predicting-Global-Energy-Consumption/edit/main/README.md
+cd Predicting-Global-Energy-Consumption
 python -m venv venv
 source venv/bin/activate      # Windows: venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
-[Add any extra setup steps here, e.g. downloading the dataset, or write "None".]
+Download Dataset from https://www.kaggle.com/datasets/atharvasoundankar/global-energy-consumption-2000-2024
 
 ---
 
-## How to run
+## How to run (to be updated)
 
 1. [Exact command, e.g. `python [path/to/script]`]
 2. [What the script prints or saves, and where]
-3. [Expected runtime: approximately [time] on [hardware]]
-
-[Add or remove steps so the list matches your actual pipeline. Commands must be in the order they should be run.]
+3. Expected runtime: approximately [time] on [hardware]
 
 ---
 
@@ -109,4 +107,4 @@ pip install -r requirements.txt
 
 ## AI-use disclosure
 
-[State which AI tools were used, for what tasks (e.g. debugging, drafting text, explaining a concept), and confirm that all code was reviewed and is understood by the team. Write "No AI tools were used" if that is the case.]
+(To be updated)
