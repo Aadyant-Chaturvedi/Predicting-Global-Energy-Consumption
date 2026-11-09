@@ -1,6 +1,6 @@
-# Global Energy Consumption
+# Predicting Global Energy Consumption
 
-ML model that predicts global energy consumption using libraries- i)Numpy ii)Pandas iii)Scikit learn iv)Matplotlib
+Predicts a country's yearly primary energy consumption (TWh) from its population, GDP per person and year, using linear regression (pandas, matplotlib, seaborn, scikit-learn).
 
 `AI101 Mini-Project` · `Group 73` · `Python 3.10+`
 
@@ -25,9 +25,11 @@ ML model that predicts global energy consumption using libraries- i)Numpy ii)Pan
 Predicting-Global-Energy-Consumption/
 ├── Dataset/
 │   └── dataset_Description.md
-│   └── global_energy_consumption.csv
+│   └── World_Energy_Consumption.csv
 ├── Source/
 │   ├── main.py
+├── output/
+│   ├── [To Be Updated]
 ├── requirements.txt
 └── README.md
 ```
@@ -38,15 +40,15 @@ Predicting-Global-Energy-Consumption/
 
 | Item | Details |
 |------|---------|
-| Source | [https://www.kaggle.com/datasets/atharvasoundankar/global-energy-consumption-2000-2024] |
-| Licence / terms of use | CC0: Public Domain |
-| Rows × columns | 10001x10 |
-| Time period covered | 2000-2024 |
-| Geographic coverage | Australia, Brazil, China, Canada, Germany, India, Japan, Russia, UK, USA |
-| Consumption measured | Global Energy Consumption in TWh |
-| Target variable | Global Energy Consumption in TWh |
-| Features used | Year, Per Capita Energy Use(kWh), Renewable Energy Share(%), Fossil Fuel Dependency(%), Industrial Energy Use(%), Household Energy Use(%), Carbon Emissions Index (Million Tons), Energy Price Index (USD/kWh) |
-| Preprocessing | Clean Dataset, Train-Test Split performed (random_state=42, test_size=0.2), Since its a linear regression model --> no scaling is required|
+| Source | https://www.kaggle.com/datasets/pralabhpoudel/world-energy-consumption |
+| Licence / terms of use | Attribution 4.0 International |
+| Rows × columns | 22,012 × 129 in the raw file; 4,732 rows used after cleaning |
+| Time period covered | Raw file: 1900–2022. Used: 1990–2018 |
+| Geographic coverage | Raw file: 306 entities, of which 219 are countries (have an ISO code) and 87 are regions, income groups or historical states (e.g. "World", "OECD (EI)"). Used: 165 countries |
+| Consumption measured | Primary energy consumption, `primary_energy_consumption` |
+| Target variable | `primary_energy_consumption`: a country's total primary energy use in a year. Modelled as its natural log |
+| Features used | `log(population)`, `log(GDP per person)`, `year`|
+| Preprocessing | Kept only rows with an ISO country code (regions and groups would double-count energy); kept 1990 onwards; dropped rows missing the target, population or GDP (2,311 rows); took natural logs|
 
 ---
 
@@ -54,55 +56,53 @@ Predicting-Global-Energy-Consumption/
 
 | Item | Details |
 |------|---------|
-| Problem type | Regression |
-| Model(s) | Linear Regression |
-| Train / test split | test_size=0.2,random_state=42 |
-| Evaluation metric(s) | MAE,RMSE,Precision,Recall,Accuracy,F1 score |
-| Results | (To be updated) |
+| Problem type | Regression (predict a continuous number) |
+| Model(s) | Linear Regression|
+| Train / test split | A random 80/20 split (seed 42) is run |
+| Evaluation metric(s) | R² (on the log scale and in TWh), MAE, RMSE |
+| Results | See table below |
 
+**Results on the test years (2011–2018):**
+
+| R² (TWh) | MAE (TWh) | RMSE (TWh) |
+|0.93|248.9|683.1|
+
+**Limitations:**
+- Errors are largest for a few countries. The biggest misses are North Korea, because their data is largely misreported.
+- A few very large countries dominate the RMSE.
+- Countries with missing GDP or population are 'excluded, so results cover 165 of the 219 countries.
+
+[To be updated by ayush]
 ---
 
 ## Setup
 
-Tested on Python 3.15.0 (Windows 11,10).
-
-```bash
-git clone https://github.com/Aadyant-Chaturvedi/Predicting-Global-Energy-Consumption/edit/main/README.md
-cd Predicting-Global-Energy-Consumption
-python -m venv venv
-source venv/bin/activate      # Windows: venv\Scripts\activate
-pip install -r requirements.txt
-```
-
-Download Dataset from https://www.kaggle.com/datasets/atharvasoundankar/global-energy-consumption-2000-2024
 
 ---
 
-## How to run (to be updated)
+## How to run
 
-1. [Exact command, e.g. `python [path/to/script]`]
-2. [What the script prints or saves, and where]
-3. Expected runtime: approximately [time] on [hardware]
+
 
 ---
 
 ## Expected output
+```bash
+R2: 0.93
+MAE: 248.9 TWh
+RMSE: 683.1 TWh
+```
 
-[Insert a screenshot of the terminal output.]
-
-![Terminal output]([path/to/screenshot])
-
-[Insert screenshots of any saved plots, with a one-line caption for each.]
-
-![[Plot description]]([path/to/plot])
+![Predicted vs actual](outputs/predicted_vs_actual.png)
+It also outputs the predicted values and the y_test dataset so that they can be compared
 
 ---
 
 ## Links
 
-- Slides ([number] min): [link or path]
-- Video ([length]): [link]
-
+- Slides 
+- Video 
+(to be updated)
 ---
 
 ## AI-use disclosure
