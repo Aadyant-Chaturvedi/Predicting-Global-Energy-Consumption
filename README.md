@@ -93,7 +93,7 @@ MAE: 248.9 TWh
 RMSE: 683.1 TWh
 ```
 
-![Predicted vs actual](outputs/predicted_vs_actual.png)
+![Predicted vs actual](output/predicted_vs_actual.png)
 It also outputs the predicted values and the y_test dataset so that they can be compared
 
 ---
