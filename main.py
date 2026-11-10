@@ -14,6 +14,11 @@ df=df[["primary_energy_consumption","population","gdp","year"]].dropna()#require
 X=df[["population","gdp","year"]]#features
 y=df["primary_energy_consumption"]#target
 #3. Model Training & Testing
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+model = LinearRegression().fit(X_train, y_train)
+pred = model.predict(X_test)
+pd.DataFrame(pred).to_csv("output/Predicted_Values.csv")
+pd.DataFrame(y_test).to_csv("output/test_Values.csv")
 #4. Model Evaluation
 print("R2:", round(r2_score(y_test, pred), 3))
 print("MAE:", round(mean_absolute_error(y_test, pred), 1), "TWh")
