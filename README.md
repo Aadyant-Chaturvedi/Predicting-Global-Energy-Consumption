@@ -77,7 +77,7 @@ Predicting-Global-Energy-Consumption/
 ---
 ## Setup
 
-Tested on Python 3.15 on Windows 11.
+Tested on Python 3.15/3.14.6 on Windows 11.
 
 ```bash
 git clone https://github.com/Aadyant-Chaturvedi/Predicting-Global-Energy-Consumption/edit/main/README.md
