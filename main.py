@@ -9,6 +9,9 @@ import matplotlib.pyplot as plt
 df = pd.read_csv("Dataset/World_Energy_Consumption.csv")
 df = df[df["iso_code"].notna()] #Some of the countries in the dataset are not really countries, i.e. they are regions like africa that contain a lot of countries therefore only considering unique countries to avoid redundant data
 df = df[df["year"] >= 1990] #Before 1990, i think the data was too little so we are only considering after that
- #2. Data Preprocessing
- #3. Model Training & Testing
- #4. Model Evaluation
+#2. Data Preprocessing
+df=df[["primary_energy_consumption","population","gdp","year"]].dropna()#required columns
+X=df[["population","gdp","year"]]#features
+y=df["primary_energy_consumption"]#target
+#3. Model Training & Testing
+#4. Model Evaluation
