@@ -1,6 +1,6 @@
 # Predicting Global Energy Consumption
 
-Predicts a country's yearly primary energy consumption (TWh) from its population, GDP per person and year, using linear regression (pandas, matplotlib, seaborn, scikit-learn).
+Predicts a country's yearly primary energy consumption (TWh) from its population, GDP and year, using linear regression (pandas, matplotlib, seaborn, scikit-learn).
 
 `AI101 Mini-Project` · `Group 73` · `Python 3.10+`
 
@@ -49,7 +49,7 @@ Predicting-Global-Energy-Consumption/
 | Geographic coverage | Raw file: 306 entities, of which 219 are countries (have an ISO code) and 87 are regions, income groups or historical states (e.g. "World", "OECD (EI)"). Used: 165 countries |
 | Consumption measured | Primary energy consumption, `primary_energy_consumption` |
 | Target variable | `primary_energy_consumption`: a country's total primary energy use in a year. Modelled as its natural log |
-| Features used | `log(population)`, `log(GDP per person)`, `year`|
+| Features used | `log(population)`, `log(GDP)`, `year`|
 | Preprocessing | Kept only rows with an ISO country code (regions and groups would double-count energy); kept 1990 onwards; dropped rows missing the target, population or GDP (2,311 rows); took natural logs|
 
 ---
