@@ -74,17 +74,26 @@ Predicting-Global-Energy-Consumption/
 - A few very large countries dominate the RMSE.
 - Countries with missing GDP or population are 'excluded, so results cover 165 of the 219 countries.
 
-[To be updated by ayush]
 ---
-
 ## Setup
 
+Tested on Python 3.15 on Windows 11.
+
+```bash
+git clone https://github.com/Aadyant-Chaturvedi/Predicting-Global-Energy-Consumption/edit/main/README.md
+cd Predicting-Global-Energy-Consumption
+python -m venv venv
+source venv/bin/activate      # Windows: venv\Scripts\activate
+pip install -r requirements.txt
+```
 
 ---
 
 ## How to run
 
-
+1. Run python src/main.py from the project folder.
+2. The script prints the MAE, RMSE, R2 and outputs the plot of predicted vs actual values
+3. Expected runtime: under 10 seconds on the machine used for testing. [Mine -> 5.259s]
 
 ---
 
