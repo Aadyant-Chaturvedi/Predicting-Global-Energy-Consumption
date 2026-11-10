@@ -80,7 +80,7 @@ Predicting-Global-Energy-Consumption/
 Tested on Python 3.15/3.14.6 on Windows 11.
 
 ```bash
-git clone https://github.com/Aadyant-Chaturvedi/Predicting-Global-Energy-Consumption/edit/main/README.md
+git clone https://github.com/Aadyant-Chaturvedi/Predicting-Global-Energy-Consumption/
 cd Predicting-Global-Energy-Consumption
 python -m venv venv
 source venv/bin/activate      # Windows: venv\Scripts\activate
@@ -120,4 +120,4 @@ It also outputs the predicted values and the y_test dataset so that they can be 
 
 ## AI-use disclosure
 
-(To be updated)
+Claude was used to generate the outline of the Readme file and to perform the preliminary data analysis to understand what variables when studied would add the most value to the model.
