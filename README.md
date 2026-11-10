@@ -30,6 +30,7 @@ Predicting-Global-Energy-Consumption/
 ├── output/
 │   └── Predicted_Values.csv
 │   └── predicted_vs_actual.png
+│   └── correlation_heatmap.png
 │   └── test_Values.csv
 ├── requirements.txt
 └── README.md
