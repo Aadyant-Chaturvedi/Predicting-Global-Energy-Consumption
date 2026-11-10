@@ -15,3 +15,11 @@ X=df[["population","gdp","year"]]#features
 y=df["primary_energy_consumption"]#target
 #3. Model Training & Testing
 #4. Model Evaluation
+print("R2:", round(r2_score(y_test, pred), 3))
+print("MAE:", round(mean_absolute_error(y_test, pred), 1), "TWh")
+print("RMSE:", round(np.sqrt(mean_squared_error(y_test, pred)), 1), "TWh")
+plt.scatter(y_test, pred, s=8, alpha=0.5)
+plt.plot([0, y.max()], [0, y.max()], "r--")
+plt.xlabel("Actual (TWh)")
+plt.ylabel("Predicted (TWh)")
+plt.savefig("output/predicted_vs_actual.png")
