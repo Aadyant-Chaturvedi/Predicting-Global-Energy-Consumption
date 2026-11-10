@@ -1,6 +1,6 @@
 # Predicting Global Energy Consumption
 
-Predicts a country's yearly primary energy consumption (TWh) from its population, GDP per person and year, using linear regression (pandas, matplotlib, seaborn, scikit-learn).
+Predicts a country's yearly primary energy consumption (TWh) from its population, GDP and year, using linear regression (pandas, matplotlib, seaborn, scikit-learn).
 
 `AI101 Mini-Project` · `Group 73` · `Python 3.10+`
 
@@ -26,10 +26,12 @@ Predicting-Global-Energy-Consumption/
 ├── Dataset/
 │   └── dataset_Description.md
 │   └── World_Energy_Consumption.csv
-├── Source/
-│   ├── main.py
+├── main.py
 ├── output/
-│   ├── [To Be Updated]
+│   └── Predicted_Values.csv
+│   └── predicted_vs_actual.png
+│   └── correlation_heatmap.png
+│   └── test_Values.csv
 ├── requirements.txt
 └── README.md
 ```
@@ -47,7 +49,7 @@ Predicting-Global-Energy-Consumption/
 | Geographic coverage | Raw file: 306 entities, of which 219 are countries (have an ISO code) and 87 are regions, income groups or historical states (e.g. "World", "OECD (EI)"). Used: 165 countries |
 | Consumption measured | Primary energy consumption, `primary_energy_consumption` |
 | Target variable | `primary_energy_consumption`: a country's total primary energy use in a year. Modelled as its natural log |
-| Features used | `log(population)`, `log(GDP per person)`, `year`|
+| Features used | `log(population)`, `log(GDP)`, `year`|
 | Preprocessing | Kept only rows with an ISO country code (regions and groups would double-count energy); kept 1990 onwards; dropped rows missing the target, population or GDP (2,311 rows); took natural logs|
 
 ---
@@ -72,17 +74,18 @@ Predicting-Global-Energy-Consumption/
 - A few very large countries dominate the RMSE.
 - Countries with missing GDP or population are 'excluded, so results cover 165 of the 219 countries.
 
+---
 ## Setup
 
 Tested on Python 3.15 on Windows 11.
 
-bash
+```bash
 git clone https://github.com/Aadyant-Chaturvedi/Predicting-Global-Energy-Consumption/edit/main/README.md
 cd Predicting-Global-Energy-Consumption
 python -m venv venv
 source venv/bin/activate      # Windows: venv\Scripts\activate
 pip install -r requirements.txt
-
+```
 
 ---
 
@@ -92,8 +95,6 @@ pip install -r requirements.txt
 2. The script prints the MAE, RMSE, R2 and outputs the plot of predicted vs actual values
 3. Expected runtime: under 10 seconds on the machine used for testing. [Mine -> 5.259s]
 
-
-
 ---
 
 ## Expected output
@@ -102,9 +103,11 @@ R2: 0.93
 MAE: 248.9 TWh
 RMSE: 683.1 TWh
 ```
+![Correlation_Heatmap](output/correlation_heatmap.png)
+![Predicted vs actual](output/predicted_vs_actual.png)
 
-![Predicted vs actual](outputs/predicted_vs_actual.png)
 It also outputs the predicted values and the y_test dataset so that they can be compared
+
 
 ---
 
