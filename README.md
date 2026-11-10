@@ -26,10 +26,11 @@ Predicting-Global-Energy-Consumption/
 ├── Dataset/
 │   └── dataset_Description.md
 │   └── World_Energy_Consumption.csv
-├── Source/
-│   ├── main.py
+├── main.py
 ├── output/
-│   ├── [To Be Updated]
+│   └── Predicted_Values.csv
+│   └── predicted_vs_actual.png
+│   └── test_Values.csv
 ├── requirements.txt
 └── README.md
 ```
