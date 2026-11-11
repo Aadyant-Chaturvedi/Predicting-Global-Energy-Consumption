@@ -83,7 +83,7 @@ Tested on Python 3.15/3.14.6 on Windows 11.
 git clone https://github.com/Aadyant-Chaturvedi/Predicting-Global-Energy-Consumption/
 cd Predicting-Global-Energy-Consumption
 python -m venv venv
-source venv/bin/activate      # Windows: venv\Scripts\activate
+source venv/bin/activate      # Windows: venv\Scripts\activate.bat
 pip install -r requirements.txt
 ```
 
