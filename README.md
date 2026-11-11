@@ -27,6 +27,8 @@ Predicting-Global-Energy-Consumption/
 │   └── dataset_Description.md
 │   └── World_Energy_Consumption.csv
 ├── main.py
+├── main.ipynb
+├── Predicting Global Energy Consumption.pdf
 ├── output/
 │   └── Predicted_Values.csv
 │   └── predicted_vs_actual.png
