@@ -91,7 +91,7 @@ pip install -r requirements.txt
 
 ## How to run
 
-1. Run python src/main.py from the project folder.
+1. Run python src/main.py or main.ipynb from the project folder.
 2. The script prints the MAE, RMSE, R2 and outputs the plot of predicted vs actual values
 3. Expected runtime: under 10 seconds on the machine used for testing. [Mine -> 5.259s]
 
