@@ -121,3 +121,4 @@ It also outputs the predicted values and the y_test dataset so that they can be 
 ## AI-use disclosure
 
 Claude was used to generate the outline of the Readme file and to perform the preliminary data analysis to understand what variables when studied would add the most value to the model.
+Chat-GPT was used to generate basic outline of the ppt, but the content was thoroughly vetted by the team, with major contribution from our ppt lead Sahil Shekhawat
