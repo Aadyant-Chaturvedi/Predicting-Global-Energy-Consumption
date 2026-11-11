@@ -114,7 +114,7 @@ It also outputs the predicted values and the y_test dataset so that they can be 
 
 ## Links
 
-- Slides 
+- Slides https://docs.google.com/presentation/d/1CIXBkvupbTd_iATzQaT1D_efk3LHws-T/edit?usp=drivesdk&ouid=111897553247108137175&rtpof=true&sd=true
 - Video 
 (to be updated)
 ---
