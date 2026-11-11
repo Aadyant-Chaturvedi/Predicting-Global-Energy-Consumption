@@ -85,6 +85,7 @@ cd Predicting-Global-Energy-Consumption
 python -m venv venv
 source venv/bin/activate      # Windows: venv\Scripts\activate.bat
 pip install -r requirements.txt
+python main.py
 ```
 
 ---
